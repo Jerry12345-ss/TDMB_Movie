@@ -1,0 +1,89 @@
+@import './color.scss';
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+ul{
+  list-style: none;
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* main 垂直水平置中 */
+#app {
+  min-height: 100vh;
+  display: flex;
+  /* flex-direction: column; */
+  overflow-x: hidden;
+  background-color: rgb(15, 15, 15);
+}
+
+p{
+  margin-bottom: 0 !important;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.container{
+  padding : {
+    left: 25px !important;
+    right: 25px !important
+  };
+  /* max-width: 1320px !important; */
+  max-width: 2000px !important;
+}
+
+/* scrollbar width */
+::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+/* scrollbar track */
+::-webkit-scrollbar-track {
+  background: #323232;
+}
+
+/* scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: rgb(193, 7, 17);
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: $theme-color;
+}
+
+/* sweetalert2 */
+.swal2-shown{
+  z-index: 10000 !important;
+}
+
+/* fadeIn */
+.fadeIn-animation{
+  animation: fadeIn 1s linear normal;
+}
+
+@keyframes fadeIn {
+  0%{
+      opacity: 0;
+  }
+
+  100%{
+      opacity: 1;
+  }
+}
