@@ -173,13 +173,9 @@ const addFavorite = (data) =>{
 
         .row{
             padding: 25px 0;
+            padding-top: 4rem;
 
             .image-container{
-                height: 450px;
-                width: 300px;
-                margin: auto;
-                margin-top: 2rem;
-
                 img{
                     height: 100%;
                     width: 100%;
@@ -248,14 +244,27 @@ const addFavorite = (data) =>{
     }
 }
 
+@media screen and (min-width : 380px){
+    .backdrop{
+        .container{
+            .row{
+                .image-container{
+                    // height: 450px;
+                    width: 300px;
+                    margin: auto;
+                    transition: all 0.6s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width : 768px){
     .backdrop{
-        .overlay{
-            .container{
-                .row{
-                    .movie-title{
-                        margin-top: 0rem;
-                    }
+        .container{
+            .row{
+                .movie-title{
+                    margin-top: 0rem;
                 }
             }
         }
@@ -264,13 +273,11 @@ const addFavorite = (data) =>{
 
 @media screen and (min-width : 1350px){
     .backdrop{
-        .overlay{
-            .container{
-                .row{
-                    .image-container{
-                        height: 500px;
-                        width: 350px;
-                    }
+        .container{
+            .row{
+                .image-container{
+                    // height: 500px;
+                    width: 350px;
                 }
             }
         }
