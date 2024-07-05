@@ -26,7 +26,14 @@
                         <span class="ms-4" style="padding: 5px 15px; border-radius: 6px; font-size: 18px;" :style="{ background : detail.status === 'Released' ? '#FFB11B' : '#2E5C6E'}">{{ detail.status }}</span>
                     </div>
                     <div class="movie-genres movie-area">
-                        <span v-for="item in getGenres" :key="item.id">{{ item }},</span>
+                        <span v-for="(item, index) in getGenres" :key="item.id">
+                            <template v-if="index === (getGenres.length - 1)">
+                                {{ item }}
+                            </template>
+                            <template v-else>
+                                {{ item }},
+                            </template>
+                        </span>
                     </div>
                     <div class="movie-overview movie-area">
                         <h3>Overview</h3>
@@ -200,7 +207,7 @@ const addFavorite = (data) =>{
             .movie-genres{
                 span{
                     color: rgb(171, 169, 169);
-                    margin: 0 .3rem;
+                    margin: 0 .2rem;
 
                     &:first-child{
                         margin-left: 0;
