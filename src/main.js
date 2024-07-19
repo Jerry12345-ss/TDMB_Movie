@@ -11,7 +11,6 @@ import App from './App.vue';
 import router from './router';
 import { useLoginStore } from './stores/login';
 import { useFavoriteMovieStore } from './stores/favorite';
-import { useMovieStore } from './stores/movie';
 
 const app = createApp(App)
 
@@ -22,8 +21,7 @@ app.mount('#app')
 
 const loginStore = useLoginStore()
 const favoriteStore = useFavoriteMovieStore()
-const movieStore = useMovieStore();
+
 loginStore.init()
 favoriteStore.init()
 
-movieStore.fetchPopular();

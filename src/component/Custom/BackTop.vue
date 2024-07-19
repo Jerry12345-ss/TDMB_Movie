@@ -22,7 +22,7 @@ onMounted(()=>{
 
 onUnmounted(()=>{
     window.removeEventListener('scroll', handleScroll)
-})
+});
 
 const handleScroll = () =>{
     if(window.scrollY > 300){

@@ -58,7 +58,6 @@ const loginStore = useLoginStore();
 const loginData = reactive({
     email : null,
     password : null,
-    // username : null
 });
 
 const onSubmit = (data) =>{

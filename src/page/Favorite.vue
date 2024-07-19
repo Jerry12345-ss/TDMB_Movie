@@ -36,13 +36,14 @@ import Footer from '@/component/Layout/Footer.vue';
 import { storeToRefs } from 'pinia';
 import { alertQuestion } from '@/helper/alert_helper';
 
-const loadMore = ref(true);
+const loadMore = ref(false);
 const currentPage = ref(0);
 const rowPerPage = ref(20);
 
 const favoriteStore = useFavoriteMovieStore();
 const { movies } = storeToRefs(favoriteStore);
 
+// initial value
 const data = ref(movies.value);
 
 const clearMovie = () =>{
@@ -67,7 +68,7 @@ const handleLoadMore = (state) =>{
 }
 
 watchEffect(()=>{
-    data.value = movies.value.slice(currentPage, (currentPage.value * rowPerPage.value) + rowPerPage.value);
+    data.value = movies.value.slice(0, (currentPage.value * rowPerPage.value) + rowPerPage.value);
 
     if(data.value.length === movies.value.length){
         loadMore.value = false;

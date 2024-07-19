@@ -41,7 +41,7 @@ export const useLoginStore = defineStore('login', ()=>{
             
             router.push('/');
         }else{
-            alertError({ title : '登入失敗', text : '帳號密碼錯誤!' });
+            alertError({ title : '登入失敗', text : '帳號密碼錯誤或查無此人!' });
         }
     }
 

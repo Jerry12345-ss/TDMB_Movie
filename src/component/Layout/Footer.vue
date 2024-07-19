@@ -16,7 +16,6 @@
 </template>
 
 <script setup>
-import { watch } from 'vue';
 </script>
 
 <style scoped lang="scss">

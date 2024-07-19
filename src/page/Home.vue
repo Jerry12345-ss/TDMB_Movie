@@ -1,22 +1,10 @@
 <template>
-  <!-- <div class="container">
-    <template v-if="movieStore.popularMovies.loading">
-      <Loader/>
-    </template>
-    <template v-else>
-      <template v-if="movieStore.popularMovies.data?.length === 0">
-        <h3 style="color: rgb(163, 6, 14);" class="mt-5 mb-0 text-center">目前尚未有人氣電影！！！</h3>
-      </template>
-      <template v-else>
-        <MovieList :movies="movieStore.popularMovies.data"/>
-        <Footer></Footer>
-      </template>
-    </template>
-  </div> -->
-
   <div class="containers">
     <template v-if="movieStatus.loading">
       <Loader/>
+    </template>
+    <template v-else-if="!movieStatus.data.now || !movieStatus.data.popular || !movieStatus.data.top || !movieStatus.data.trend || !movieStatus.data.upcoming">
+      <h2 style="color: rgb(163, 6, 14);" class="mt-5 mb-0 text-center">發生不明錯誤, &nbsp; 請稍後再試！</h2>
     </template>
     <template v-else>
       <div class="fadeIn-animation">
@@ -35,11 +23,8 @@
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia';
-import { useMovieStore } from '@/stores/movie';
 import axios from 'axios';
-import { onMounted, reactive, watch, ref } from 'vue';
-// import MovieList from '../component/MovieList.vue';
+import { onMounted, reactive} from 'vue';
 import Loader from '@/component/Loader.vue';
 import Footer from '@/component/Layout/Footer.vue';
 import { alertError } from '@/helper/alert_helper';
@@ -81,12 +66,6 @@ onMounted(()=>{
     movieStatus.loading = false;
   });
 });
-
-
-
-
-const movieStore = useMovieStore();
-const { popularMovies } = storeToRefs(movieStore);
 </script>
 
 <style scoped lang="scss">

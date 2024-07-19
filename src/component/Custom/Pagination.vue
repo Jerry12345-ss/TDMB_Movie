@@ -23,7 +23,7 @@ const gotoNumber = ref(null);
 
 // 這邊要做 +1、-1 不能解構, 不然會無法做加減處理
 const handlePrev = () =>{
-    if(props.modelValue !== 1){
+    if(props.modelValue > 1){
         emit('update:modelValue', props.modelValue - 1); 
     }
 }
@@ -34,8 +34,9 @@ const handleNext = () =>{
     }
 }
 
-const handleGoto = () =>{    
-    if(isNaN(gotoNumber.value) || !Number.isInteger(gotoNumber.value)){
+const handleGoto = () =>{  
+    // 用 isNaN 會自動先轉成 Number(), 因此用 Number.isNaN 更加嚴謹
+    if(Number.isNaN(gotoNumber.value) || !Number.isInteger(gotoNumber.value)){
         return;
     }else{
         if(gotoNumber.value > props.total){

@@ -43,7 +43,7 @@ const handleSearch = (keyword) =>{
         font-size: 18px;
         color: $text-color;
         border-radius: 30px;
-        transition: all .2s ease-out;
+        transition: all .3s ease-in-out;
 
         &::placeholder{
             color: rgb(141, 139, 139);  

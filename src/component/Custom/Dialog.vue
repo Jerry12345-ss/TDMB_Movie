@@ -10,7 +10,8 @@
                     <slot></slot>
                 </div>
                 <div class="dialog-footer dilaog-area">
-                    <slot name="footer"></slot>
+                    <slot name="footer">
+                    </slot>
                 </div>
             </div>
         </div>
@@ -20,10 +21,6 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue';
 
-// defineOptions({
-//     inheritAttrs : false
-// });
-
 const emit = defineEmits(['close']);
 
 const handleClose = () =>{
@@ -32,13 +29,13 @@ const handleClose = () =>{
 
 onMounted(()=>{
     window.addEventListener('click', (event)=>{
-        toggleDialog(event)  
+        toggleDialog(event);  
     });
 });
 
 onUnmounted(()=>{
     window.removeEventListener('click', (event)=>{
-        toggleDialog(event) 
+        toggleDialog(event); 
     });
 });
 

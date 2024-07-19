@@ -12,7 +12,6 @@
 
 <script setup>
 import Header from './Header.vue';
-// import Footer from './Footer.vue';
 import Sidebar from '../Layout/Sidebar.vue';
 import BackTop from '../Custom/BackTop.vue';
 import { ref } from 'vue';

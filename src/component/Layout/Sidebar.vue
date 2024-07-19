@@ -1,5 +1,5 @@
 <template>
-    <div :class="['aside-overlay', { show : show }]" :id="'test'"></div>
+    <div :class="['aside-overlay', { show : show }]"></div>
     <aside :class="{ show : show }">
         <div class="d-flex flex-column">
             <div class="sidebar-logo">
@@ -29,7 +29,7 @@
             <hr>
 
             <div class="sidebar-geners">
-                <ul style="padding-bottom: 10px;">
+                <ul style="padding-bottom: 0;">
                     <li class="sidebar-item-title">Genres</li>
                     <li v-for="item in geners" :key="item.name">
                         <RouterLink :to="item.path">{{ item.name }}</RouterLink>
@@ -123,11 +123,15 @@ aside{
                 padding: 10px 15px;
                 color: $text-color;
                 display: block;
-                transition: all .2s ease-in-out;
+                transition: all .3s ease-in-out;
 
                 &:hover{
                     background-color: rgba(255, 255, 255, .1);
                 }
+            }
+
+            .router-link-exact-active{
+                background-color: rgb(163, 5, 13)!important;
             }
         }
 

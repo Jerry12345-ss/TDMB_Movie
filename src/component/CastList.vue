@@ -1,7 +1,7 @@
 <template>
     <section class="movie-list-container">
         <div class="movie-list-title">
-            <Title :title="'Cast List'" size="26"></Title>
+            <Title title="Cast List" size="26"></Title>
         </div>
         <template v-if="castlist?.length === 0">
             <h3 style="color: rgb(163, 6, 14);" class="mt-5 mb-0 text-center">目前無任何卡司！！！</h3>

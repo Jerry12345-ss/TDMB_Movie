@@ -21,10 +21,15 @@ export const useFavoriteMovieStore = defineStore('favorite', ()=>{
     }
 
     const removeMovie = (movie) =>{
-        const result = movies.value.filter(item => item.id !== movie.id);
-        movies.value = result;
-        localStorage.setItem('movies', JSON.stringify(movies.value));
-        init();  
+        const isMovieExist = movies.value.find(item => item.id === movie.id);
+
+        if(isMovieExist){
+            const result = movies.value.filter(item => item.id !== movie.id);
+            localStorage.setItem('movies', JSON.stringify(result));
+            init();   
+        }else{
+            return;
+        }
     }
 
     const checkMovies = (movie) =>{
