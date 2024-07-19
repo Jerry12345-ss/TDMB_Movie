@@ -30,12 +30,6 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="form-area mb-2">
-                                <div class="mb-3">
-                                    <FieldFloat class="form-control" name="username" label="使用者名稱" placeholder="使用者名稱" rules="required" v-model="loginData.username" type="text"/>
-                                </div>
-                            </div> -->
-
                             <div style="padding: 0 0.75rem;">
                                 <button class="btn">登入</button>
                             </div>
