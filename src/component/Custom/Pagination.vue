@@ -35,8 +35,7 @@ const handleNext = () =>{
 }
 
 const handleGoto = () =>{  
-    // 用 isNaN 會自動先轉成 Number(), 因此用 Number.isNaN 更加嚴謹
-    if(Number.isNaN(gotoNumber.value) || !Number.isInteger(gotoNumber.value)){
+    if(typeof gotoNumber.value !== 'number' || !Number.isInteger(gotoNumber.value)){
         return;
     }else{
         if(gotoNumber.value > props.total){
